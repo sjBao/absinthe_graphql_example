@@ -17,9 +17,8 @@ defmodule AssignmentGraphqlApiWeb.Router do
   scope "/" do
     pipe_through :api
 
-    forward "/graphql", Absinthe.Plug,
-      schema: AssignmentGraphqlApiWeb.Schema
-    
+    forward "/graphql", Absinthe.Plug, schema: AssignmentGraphqlApiWeb.Schema
+
     if Mix.env() === :dev do
       forward "/graphiql", Absinthe.Plug.GraphiQL,
         schema: AssignmentGraphqlApiWeb.Schema,
