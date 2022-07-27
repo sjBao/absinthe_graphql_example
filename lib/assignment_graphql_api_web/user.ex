@@ -13,7 +13,7 @@ defmodule AssignmentGraphqlApiWeb.User do
     end
   end
 
-  def all(), do: {:ok, db_read()}
+  def all, do: {:ok, db_read()}
 
   def find(id) when is_binary(id), do: find(String.to_integer(id))
 
@@ -87,7 +87,7 @@ defmodule AssignmentGraphqlApiWeb.User do
   end
 
   defp db_read do
-    {:ok, raw_txt} = IO.inspect(File.read("lib/assignment_graphql_api_web/users.json"))
+    {:ok, raw_txt} = File.read(@db_path)
     {:ok, users_data} = Jason.decode(raw_txt, keys: :atoms)
 
     users_data
