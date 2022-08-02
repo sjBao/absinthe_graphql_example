@@ -14,7 +14,8 @@ defmodule AssignmentGraphqlApi.Application do
       {Phoenix.PubSub, name: AssignmentGraphqlApi.PubSub},
       # Start the Endpoint (http/https)
       AssignmentGraphqlApiWeb.Endpoint,
-      {Absinthe.Subscription, AssignmentGraphqlApiWeb.Endpoint}
+      {Absinthe.Subscription, AssignmentGraphqlApiWeb.Endpoint},
+      AssignmentGraphqlApiWeb.Database
       # Start a worker by calling: AssignmentGraphqlApi.Worker.start_link(arg)
       # {AssignmentGraphqlApi.Worker, arg}
     ]
